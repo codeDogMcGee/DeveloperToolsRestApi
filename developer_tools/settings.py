@@ -27,8 +27,8 @@ SECRET_KEY = os.environ.get( 'DJANGO_SECRET_KEY', 'django-insecure-*5z%2plfy95(v
 # DEBUG = False
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = [os.environ['still-lake-53461.herokuapp.com']] if 'still-lake-53461.herokuapp.com' in os.environ else []
-
+# ALLOWED_HOSTS = [os.environ['still-lake-53461.herokuapp.com']] if 'still-lake-53461.herokuapp.com' in os.environ else []
+ALLOWED_HOSTS = ['still-lake-53461.herokuapp.com']
 
 # Application definition
 
