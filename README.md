@@ -1,5 +1,12 @@
 # Developer Tools REST API
 
+### View live API by [clicking here!](https://still-lake-53461.herokuapp.com/)
+
+Pull the Docker image with:
+```
+docker pull codedogmcgee/developer_tools_django_rest_api
+```
+
 ## API Endpoints
 General endpoint:
 ```
