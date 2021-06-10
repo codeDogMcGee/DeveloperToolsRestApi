@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get( 'DJANGO_SECRET_KEY', 'django-insecure-*5z%2plfy95(v
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 # ALLOWED_HOSTS = [os.environ['still-lake-53461.herokuapp.com']] if 'still-lake-53461.herokuapp.com' in os.environ else []
-ALLOWED_HOSTS = ['still-lake-53461.herokuapp.com']
+ALLOWED_HOSTS = ['still-lake-53461.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
@@ -46,6 +46,14 @@ INSTALLED_APPS = [
     # project apps
     'rest_api.apps.RestApiConfig',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+        'rest_framework_csv.renderers.CSVRenderer',
+    ),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

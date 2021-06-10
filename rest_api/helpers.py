@@ -1,8 +1,9 @@
 import json
 import requests
-import traceback
+import csv
 from datetime import datetime
 from collections import Counter, OrderedDict
+from django.http.response import HttpResponse
 
 from .serializers import ReleaseSerializer, OrganizationsSerializer
 
@@ -27,6 +28,16 @@ def get_json_from_api(request_url: str) -> dict[str, object]:
         response_content = json.loads(response_content)  # then convert the text to json
         output = {'status': response_code, 'data': response_content}
     return output
+
+
+
+def csv_response(data):
+    response = HttpResponse(content_type='text/csv',headers = {'Content-Disposition': 'attachment; filename="organizations.csv"'})
+    writer = csv.DictWriter(response, fieldnames=['organization', 'release_count', 'total_labor_hours', 'all_in_production', 'licenses', 'most_active_months'])
+    writer.writeheader()
+    for row in data:
+        writer.writerow(dict(row))
+    return response
 
 
 def create_serialized_organizations_object(releases_list: list[object], sort_column: str = 'organization', ascending: bool = True) -> json:

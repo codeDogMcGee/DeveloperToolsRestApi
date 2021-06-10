@@ -19,6 +19,12 @@ organizations/total_labor_hours/0/
 ```
 will return data sorted by total_labor_hours in descending order.
 
+Additionally, tag 'csv/ to the end of any existing endpoint for a downloadable CSV file.
+```
+organizations/total_labor_hours/0/csv/
+```
+The above endpoint will automatically download an organizations.csv file sorted by total_labor_hours in descending order.
+
 ## Homepage
 Visit the homepage for clickable links to various endpoints.
 ![Homepage Image](images/homepage.PNG)
