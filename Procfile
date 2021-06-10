@@ -1,1 +1,1 @@
-web: gunicorn developer_tools.developer_tools.wsgi --log-file -
+web: gunicorn developer_tools.wsgi --log-file -
