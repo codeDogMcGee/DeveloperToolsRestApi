@@ -31,14 +31,8 @@ h3 {
     text-align: left;
 }
 
-nav a {
-    font-size: 1rem;
-}
-
-header nav{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+li {
+    margin: 1rem 0;
 }
 
 .main-container {

@@ -41,7 +41,7 @@ class OrganizationsSortedView(APIView):
     permission_classes = [permissions.AllowAny]
 
     def get(self, request, sort_column='organization', ascending=1):
-        if ascending > 1 or sort_column not in ['organization', 'release_count', 'total_labor_hours ']:
+        if ascending > 1 or sort_column not in ['organization', 'release_count', 'total_labor_hours']:
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
         data_response = get_json_from_api(DATA_URL)
