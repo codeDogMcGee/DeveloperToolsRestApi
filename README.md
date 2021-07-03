@@ -1,11 +1,8 @@
 # Developer Tools REST API
 
-### View live API by [clicking here!](https://still-lake-53461.herokuapp.com/)
+This API aggregates data from energy.gov endpoint: [https://www.energy.gov/sites/prod/files/2020/12/f81/code-12-15-2020.json](https://www.energy.gov/sites/prod/files/2020/12/f81/code-12-15-2020.json).
 
-Pull the Docker image with:
-```
-docker pull codedogmcgee/developer_tools_django_rest_api
-```
+## View live API on Heroku by [clicking here!](https://still-lake-53461.herokuapp.com/)
 
 ## API Endpoints
 General endpoint:
@@ -44,7 +41,6 @@ The only difference when using Linux is instead of _{venv\Scripts\activate.bat}_
 
 To run the server cd into the Django project and in your command line:
 ```
-(venv) cd developer_tools
 (venv) python manage.py runserver
 ```
 Once the server is running navigate to [localhost:8000](http://127.0.0.1:8000/) to find the clickable endpoints.
