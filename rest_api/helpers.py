@@ -7,18 +7,21 @@ from django.http.response import HttpResponse
 
 from .serializers import ReleaseSerializer, OrganizationsSerializer
 
-API_MAIN_ROUTE = 'http://127.0.0.1:8080/'
-
 DATA_URL = 'https://www.energy.gov/sites/prod/files/2020/12/f81/code-12-15-2020.json'
 
 
 def get_json_from_api(request_url: str) -> dict[str, object]:
     response = {}
+
+    print(request_url)
+
     try:
         if len(request_url) > 0:
-            response = requests.get(request_url)
+            response = requests.get(request_url, timeout=5)
     except Exception as e:
         raise e
+
+    print(response)
 
     if response == {}:
         output = {'status': 404, 'content': {}}
